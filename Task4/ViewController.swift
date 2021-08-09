@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        s
+        
         countriesCodes.removeAll()
         for localeCode in NSLocale.isoCountryCodes {
             countriesCodes.append(localeCode)

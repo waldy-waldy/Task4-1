@@ -15,7 +15,7 @@ class CountryInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        s
+        
         let countryNameForRequest = "https://en.wikipedia.org/wiki/" + countryName.replacingOccurrences(of: " ", with: "_")
         countryWebView.load(URLRequest(url: URL(string: countryNameForRequest)!))
     }

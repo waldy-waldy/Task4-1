@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var countries: [String] = []
     var countriesCodes: [String] = []
     
     override func viewDidLoad() {
@@ -25,15 +24,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        countries.removeAll()
+        countriesCodes.removeAll()
         
         for localeCode in NSLocale.isoCountryCodes {
             countriesCodes.append(localeCode)
-            let current = NSLocale.current as NSLocale
-            let countryName = current.displayName(forKey: NSLocale.Key.countryCode, value: localeCode)!
-            countries.append(countryName)
         }
+        
         tableView.reloadData()
+    }
+    
+    func getCountryName(countryCode: String) -> String {
+        let current = NSLocale.current as NSLocale
+        let countryName = current.displayName(forKey: NSLocale.Key.countryCode, value: countryCode)!
+        return countryName
     }
     
     func getCountryFlag (countryCode: String) -> String {
@@ -43,13 +46,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return countriesCodes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath) as! CountryCell
-        print(getCountryFlag(countryCode: countriesCodes[indexPath.row]))
-        cell.countryNameLabel.text = countries[indexPath.row]
+        
+        cell.countryNameLabel.text = getCountryName(countryCode: countriesCodes[indexPath.row])
         cell.countryFlagLabel.text = getCountryFlag(countryCode: countriesCodes[indexPath.row])
         return cell
     }
@@ -60,7 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CountryInfoViewController {
-            destination.countryName = countries[(tableView.indexPathForSelectedRow?.row)!]
+            destination.countryName = getCountryName(countryCode: countriesCodes[(tableView.indexPathForSelectedRow?.row)!])
             tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
         }
     }

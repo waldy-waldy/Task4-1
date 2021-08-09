@@ -6,32 +6,17 @@
 //
 
 import UIKit
+import WebKit
 
 class CountryInfoViewController: UIViewController {
-
-    
-    @IBOutlet weak var label: UILabel!
     
     var countryName: String = "Empty"
+    @IBOutlet weak var countryWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let countryNameForRequest = countryName.replacingOccurrences(of: " ", with: "_")
-        label.text = countryNameForRequest
-        //https://en.wikipedia.org/wiki/
-        // Do any additional setup after loading the view.
+        let countryNameForRequest = "https://en.wikipedia.org/wiki/" + countryName.replacingOccurrences(of: " ", with: "_")
+        countryWebView.load(URLRequest(url: URL(string: countryNameForRequest)!))
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

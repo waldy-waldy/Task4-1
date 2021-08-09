@@ -54,4 +54,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showCountryInfo", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CountryInfoViewController {
+            destination.countryName = countries[(tableView.indexPathForSelectedRow?.row)!]
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+        }
+    }
+    
 }

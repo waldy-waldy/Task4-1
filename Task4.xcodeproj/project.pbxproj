@@ -15,7 +15,7 @@
 		18F2B77826C14C9F008C55D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F2B77626C14C9F008C55D0 /* LaunchScreen.storyboard */; };
 		18F2B78626C14D48008C55D0 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2B78426C14D48008C55D0 /* CountryCell.swift */; };
 		18F2B78726C14D48008C55D0 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F2B78526C14D48008C55D0 /* CountryCell.xib */; };
-		18F2B78A26C156F1008C55D0 /* CountryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2B78926C156F1008C55D0 /* CountryInfoView.swift */; };
+		18F2B79126C16687008C55D0 /* CountryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F2B79026C16687008C55D0 /* CountryInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		18F2B77926C14C9F008C55D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18F2B78426C14D48008C55D0 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		18F2B78526C14D48008C55D0 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
-		18F2B78926C156F1008C55D0 /* CountryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoView.swift; sourceTree = "<group>"; };
+		18F2B79026C16687008C55D0 /* CountryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				18F2B77926C14C9F008C55D0 /* Info.plist */,
 				18F2B78426C14D48008C55D0 /* CountryCell.swift */,
 				18F2B78526C14D48008C55D0 /* CountryCell.xib */,
-				18F2B78926C156F1008C55D0 /* CountryInfoView.swift */,
+				18F2B79026C16687008C55D0 /* CountryInfoViewController.swift */,
 			);
 			path = Task4;
 			sourceTree = "<group>";
@@ -149,9 +149,9 @@
 			files = (
 				18F2B78626C14D48008C55D0 /* CountryCell.swift in Sources */,
 				18F2B77026C14C9D008C55D0 /* ViewController.swift in Sources */,
+				18F2B79126C16687008C55D0 /* CountryInfoViewController.swift in Sources */,
 				18F2B76C26C14C9D008C55D0 /* AppDelegate.swift in Sources */,
 				18F2B76E26C14C9D008C55D0 /* SceneDelegate.swift in Sources */,
-				18F2B78A26C156F1008C55D0 /* CountryInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

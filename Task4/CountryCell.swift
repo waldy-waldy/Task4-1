@@ -11,12 +11,12 @@ class CountryCell: UITableViewCell {
 
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var countryFlagLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+s
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
